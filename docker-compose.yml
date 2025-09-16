@@ -26,16 +26,13 @@ services:
       db:
         condition: service_healthy
     environment:
-      # Fixed: Use correct database connection for Docker network
       - DATABASE_URL=postgresql+psycopg2://app:app@db:5432/linkedin
       - SECRET_KEY=dev-secret-change-in-production
       - ACCESS_TOKEN_EXPIRE_MINUTES=60
     ports:
       - "8000:8000"
     volumes:
-      # Mount current directory for development
       - .:/app
-      # Exclude node_modules and other unnecessary directories
       - /app/__pycache__
       - /app/.pytest_cache
     command: >

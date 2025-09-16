@@ -26,9 +26,8 @@ def _tick_publish_due() -> None:
             .all()
         )
         for post in candidates:
-            # Only publish when we are at or past the post's scheduled random second within the minute
             scheduled_second = post.scheduled_second or 0
-            if now >= post.scheduled_at.replace(second=scheduled_second, microsecond=0):  # type: ignore[union-attr]
+            if now >= post.scheduled_at.replace(second=scheduled_second, microsecond=0): 
                 _simulate_linkedin_publish(post)
                 post.status = PostStatus.published
                 post.published_at = now
