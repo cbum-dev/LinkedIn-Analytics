@@ -20,10 +20,6 @@
 1. Create and activate a venv, then:
    ```bash
    pip install -r requirements.txt
-   export DATABASE_URL=postgresql+psycopg2://app:app@localhost:5432/linkedin
-   export SECRET_KEY=change-me
-   export ACCESS_TOKEN_EXPIRE_MINUTES=60
-   uvicorn app.main:app --reload
    ```
 2. Initialize DB:
    ```bash
