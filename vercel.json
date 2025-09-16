@@ -7,8 +7,8 @@
     ],
     "builds": [
         {
-            "src": "Dockerfile",
-            "use": "@vercel/docker"
+            "src": "/app/main:app",
+            "use": "@vercel/python"
         }
     ]
 }
